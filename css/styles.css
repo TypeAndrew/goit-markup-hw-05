@@ -55,10 +55,31 @@ body {
     color: var(--color-blue);
 }
 
-.current-page::after {
+ 
+.first-page::after {
     content: "";
-    text-decoration-line: underline;
-    text-decoration: underline;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    
+    top: 46px;
+    transform: translateX(-100%);
+    background: #2196F3;
+    border-radius: 2px;
+    
+}
+
+
+.second-page::after {
+    content: "";
+    position: absolute;
+    width: 76px;
+    height: 4px;
+    top: 46px;
+    transform: translateX(-100%);
+    background: #2196F3;
+    border-radius: 2px;
+    
 }
 
 .page {
@@ -140,6 +161,7 @@ a:hover, a {
 }
 
 .item-nav {
+    position: relative;
     display: inline;
     list-style-type: none;
     font-weight: 500;
@@ -460,6 +482,7 @@ a:hover, a {
     max-width: 100%;
     height: auto;
     display: block;
+    position: relative;
 }
 
 .element-project {
@@ -643,7 +666,46 @@ a:hover, a {
 .refer-project {
 
     display: block;
+    position: relative;
+    
+}
 
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 100%;
+
+    padding: 63px 24px;
+
+    transform: translateY(100%);
+    transition: transform 250ms ease;
+ 
+    
+    background: rgba(33, 150, 243, 0.9);
+    
+    font-size: 18px;
+    line-height: 1.14;
+    /* or 156% */
+    
+    letter-spacing: 0.03em;
+    
+    color: var(--color-white);
+    text-align: justify;
+    
+}
+
+.picture-block {
+    
+    position: relative;
+    overflow: hidden;
+}
+
+.picture-block:hover .overlay {
+    transform: translateY(0);
+    
 }
 
 .refer-project:hover {
@@ -675,4 +737,48 @@ a:hover, a {
 
     color: var(--color-white);
     background: rgba(47, 48, 58, 0.8);
+}
+
+
+
+
+/*Modal window*/
+.backdrop {
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(36,43,51,0.6);
+    
+}
+
+.modal {
+    
+    position: fixed;
+    width: 528px;
+    height: 581px;
+    
+    
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    background: var(--color-white);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.modal-close-button {
+    
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+}
+
+.is-hidden {
+    
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
 }

@@ -16,7 +16,7 @@
     </head>
 
     <body>
-
+        
         <header class="topline">
             
             <div class="conteiner">
@@ -24,7 +24,10 @@
                 <nav class="topline-nav">
                     
                     <ul class="menu-nav">
-                        <li class = "item-nav"> <a class ="current-page" href="./index.html">Студия</a></li>
+                        <li class = "item-nav"> 
+                            
+                                <a class="current-page first-page" href="./index.html">Студия</a></li>
+                                
                         <li class = "item-nav"> <a class ="page" href="./potrfolio.html">Портфолио</a></li>
                         <li class = "item-nav"> <a class ="page" href="https://goo.gl/maps/EKqUcqqfUvBnX7aQ7">Контакты</a></li>
                     </ul>
@@ -51,11 +54,12 @@
                 </ul>
             </div>
         </header>
+     
         <main class="main">
             <section class="main-top" >
                 <div class="conteiner">
                     <h1 class= "tittle-big">Эффективные решения для вашего бизнеса</h1>
-                    <button type="button" class="button">Заказать услугу</button>
+                    <button class="button" type="button" data-modal-open>Заказать услугу</button>
                 </div>
             </section>
             
@@ -116,19 +120,19 @@
                         <li class = "item-work">
                             <div class="thumb">
                                 <img class ="picture" src="images/img1.jpg"  alt="descktop app">
-                                
+                                <p class="label">Десктопные приложения</p>
                             </div>
                         </li>
                         <li class = "item-work">
                             <div class="thumb">
                                 <img class ="picture" src="images/img2.jpg"  alt="mobile app">
-                                
+                                <p class="label">Мобильные приложения</p>
                             </div>
                         </li>
                         <li class = "item-work">
                             <div class="thumb">
                                 <img class="picture" src="images/img3.jpg" alt="web design">
-                                
+                                <p class="label">Дизайнерские решения</p>
                             </div>
                         </li>
                     
@@ -396,6 +400,14 @@
             </div>    
         </footer>
        
+       <div class="backdrop is-hidden" data-modal>
+            <div class="conteiner">
+                <div class="modal">
+                    <button class="modal-close-button" type="button" data-modal-close>Х</button>
+                </div>
+            </div>
+       </div>
+        <script src="./js/modal.js"></script>
     </body>
 
 </html>
