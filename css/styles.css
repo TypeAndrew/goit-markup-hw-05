@@ -64,8 +64,10 @@ body {
     
     top: 46px;
     transform: translateX(-100%);
-    background: #2196F3;
+    background: var(--color-blue);
     border-radius: 2px;
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 
@@ -77,8 +79,10 @@ body {
     height: 4px;
     top: 46px;
     transform: translateX(-100%);
-    background: #2196F3;
+    background: var(--color-blue);
     border-radius: 2px;
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 
@@ -180,6 +184,8 @@ a:hover, a {
     text-decoration: none;
     text-decoration-line: none;
     text-decoration-color: var(--color-blue);
+    
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 
@@ -292,6 +298,8 @@ a:hover, a {
 .button-portfolio:hover {
     background-color: var(--color-blue);
     color: var(--color-white);
+
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-our-work {
@@ -361,10 +369,7 @@ a:hover, a {
     background: var(--color-white);
 }
 
-.item-project:hover {
 
-    
-}
 
 .tittle-item-project {
     margin-bottom: 4px;
@@ -486,6 +491,7 @@ a:hover, a {
 }
 
 .element-project {
+    position: relative;
     padding: 20px 24px;
     border: 1px solid var(--color-border);
     border-left: 1px solid rgba(238, 238, 238, 1);
@@ -570,14 +576,7 @@ a:hover, a {
 
 }
 
-.contact:hover, 
-.contact-mail:hover
- {
-    
-    fill: var(--color-blue);
-    
-    
-}
+
 
 .button-social {
     
@@ -628,11 +627,15 @@ a:hover, a {
 .button-social:hover {
     
     background-color: var(--color-blue);
+
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-social:hover .icon-social-item{
 
    fill: var(--color-white);
+
+   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-social-item {
@@ -645,12 +648,6 @@ a:hover, a {
     fill: currentColor;
 }
 
-.item-client:hover {
-    fill: var(--color-blue);
-    border: 1px solid var(--color-blue);
-}
-
-
 
 .icon-client {
 
@@ -660,7 +657,9 @@ a:hover, a {
 .icon-client:hover {
 
     fill: var(--color-blue);
+    border: 1px solid var(--color-blue);
     border-color: var(--color-blue);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .refer-project {
@@ -670,7 +669,7 @@ a:hover, a {
     
 }
 
-.overlay {
+.overlay-project {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -703,14 +702,20 @@ a:hover, a {
     overflow: hidden;
 }
 
-.picture-block:hover .overlay {
+
+
+.refer-project:hover .overlay-project {
     transform: translateY(0);
-    
+
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .refer-project:hover {
 
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .thumb {
@@ -720,8 +725,10 @@ a:hover, a {
 
 .thumb > .label {
 
-    padding-top: 27px;
-    padding-bottom: 27px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     position: absolute;
     bottom: 0px;
@@ -751,6 +758,11 @@ a:hover, a {
     
 }
 
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.9);
+    
+}
+
 .modal {
     
     position: fixed;
@@ -760,22 +772,33 @@ a:hover, a {
     
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
 
     background: var(--color-white);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-button {
     
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
 
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.is-hidden {
+.backdrop.is-hidden {
     
     opacity: 0;
     visibility: hidden;
